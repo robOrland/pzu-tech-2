@@ -13,7 +13,7 @@ const app = new Elysia()
             .group('/tickets', (app) => app.use(ZeladoriaModule))
             .use(AdminModule)
     )
-    .listen(3000);
+    .listen(process.env.PORT || 3000);
 
 console.log(
     `🚀 Server is running at ${app.server?.hostname}:${app.server?.port}`
